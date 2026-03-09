@@ -1,0 +1,22 @@
+db_absensi {
+    siswa [
+        id 
+        nama
+        kelas
+        status
+        tanggal
+        time
+    ]
+}
+
+db_siswa {
+    siswa {
+        nama
+        kelas
+        hobi
+        tanggal [hari, bulan, tahun]
+        gender [laki-laki, perempuan, tidak_ingin_diketahui]
+        email
+        password
+    }
+}

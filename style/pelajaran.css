@@ -1,0 +1,37 @@
+
+
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 4px 0 #ccc;
+}
+
+.item {
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #aaa;
+  color: #666;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.item:hover {
+  color: #000;
+}
+
+.item.active {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  color: #fff;
+  background: linear-gradient(90rad, #ff7e29, #f9d423);
+  font-weight: bold;
+}
+
+.tab-content .content {
+  display: none;
+  padding: 20px 0;
+}
+
+.tab-content .content.active {
+  display: block;
+}

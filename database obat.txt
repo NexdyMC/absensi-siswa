@@ -1,0 +1,34 @@
+data obat 
+=========================
+id_obat
+nama_obat
+jenis_obat
+kadaruwarsa
+h_jual
+h_beli
+
+data suplier
+=========================
+id_suplier
+nama_suplier
+alamat
+email
+gender
+
+data karyawan
+=========================
+id_karyawan
+nama_karyawan
+pekerjaan
+alamat
+no_hp
+jenis_kelamin
+
+data pembelian
+=========================
+id_pembeli
+nama_pembeli
+jenis_kelamin
+tanggal_pembelian
+harja_pembelian
+

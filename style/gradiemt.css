@@ -1,0 +1,58 @@
+.red {
+    background: linear-gradient(45deg, rgb(220 38 38), rgb(234 88 13));
+}
+.orange {
+    background: linear-gradient(45deg, rgb(245 157 11), rgb(234 88 12));
+}
+.blue {
+    background: linear-gradient(45deg,  rgb(37 100 235), rgb(101 228 249));
+    
+}
+.yellow {
+    background: linear-gradient(45deg, rgb(254 239 135) , rgb(250 205 23) ) ;
+    
+}
+.yellowgreen {
+    background: linear-gradient(45deg, rgb(130 203 23),rgb(26 165 73));
+    
+}
+.green {
+    
+}
+.seagreen {
+    background: linear-gradient(45deg, #10b67f,rgb(26 165 73));
+
+}
+.turquoise {
+
+}
+.violet {
+
+}
+.purple {
+
+}
+.brown {
+
+}
+.black {
+
+}
+
+.gray {
+
+}
+
+.white {
+
+}
+
+.black-1 {
+    background:linear-gradient(45deg, rgb(15 23 42), rgb(51 65 85));
+}
+.green-1 {
+    background:linear-gradient(45deg, rgb(132 204 22), rgb(163 230 53));
+}
+.purple-1 {
+    background: linear-gradient(45deg, rgb(122 59 237),rgb(122 59 237));   
+}

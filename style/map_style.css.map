@@ -1,0 +1,5 @@
+{
+    "style": "style/style.css",
+    "dashboard": "style/dashboard.css",
+    "map": "style/map_style.json"
+}

@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+  font-family: "LilitaOne";
+  src: url(../fonts/LilitaOne.ttf);
+}
+body {
+    font-family: 'LilitaOne', Arial, Helvetica, sans-serif;
+    background: #eee;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.container {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #2563eb, #153885);
+    color: #fff;
+    width: 860px;
+}
+form {
+    display: flex;
+    overflow: hidden;
+    scroll-snap-type: x mandatory; /* magnet */
+    scroll-behavior: smooth;
+}
+.parent {
+    display:  grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    gap: 8px;
+    min-width: 800px;
+    margin: 30px;
+    scroll-snap-align: center; /*magnet*/
+    position: relative;     
+}
+.logo  {
+    grid-column: span 2 / span 2;
+    display: flex;
+    justify-content: space-between;
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+.nama-anda {
+    grid-row: span 2 / span 2;
+    grid-row-start: 2;
+}
+.inputData {
+    grid-row: span 2 / span 2;
+    grid-row-start: 2;
+}
+.controls {
+    grid-column: span 2 / span 2;
+}
+input, select, textarea  {
+    margin-top: 10px;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: "LilitaOne";
+    width: 100%;
+    border-radius: 10px;
+    font-family: "LilitaOne";
+    font-size: 16px;
+    background: #eee;
+    box-shadow: 0 6px 0 #555;
+    margin: 10px 0;
+}
+a, button{
+    font-family: 'LilitaOne';
+    color: #fff;
+    padding: 1rem 30px;
+    border: none;
+    border-radius: 500px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration:none;
+}
+label {
+    gap: 8px;
+    display: flex;
+}
+.next {
+    float: right;
+    background: linear-gradient(45deg, #22d2ee, #2564eb);
+    &:hover{
+        background: linear-gradient( #22d2ee, #2564eb);
+    }
+}
+.back {
+    float: left;
+    background: linear-gradient(90rad, #ff7e29, #f9d423);
+    
+    &:hover{
+        background: linear-gradient(#ff7e29, #f9d423);
+    }
+}

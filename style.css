@@ -1,0 +1,121 @@
+
+:root {  
+    /* template root */
+    --wh: #fff;
+    --dark: #000;
+    --gd: #060e06a8;
+    --bg: #ffffff0f;
+    --e: #0012FB0C;
+    --bbg: #0039F920;
+    --bc: 100%;
+    --rbg: #07030308;
+    --bgurl : ;
+}
+body {
+    cursor: url(cursor_diamond_sword.png), auto;
+    display: flex;
+    justify-content: center;
+    font-family: 'zh-cn', sans-serif;
+    background: var(--bgurl);
+    background-position: top;
+    /* z-index: -1; */
+    background-size: cover;
+    color: var(--wh);
+    font-weight: 400;
+}
+
+nav {
+    margin: 0 0 20px 0;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--bc);
+    height: var(--bc);
+    overflow: hidden;
+    /* z-index: -1; */
+}
+#bg-video {
+    width: var(--bc);
+    height: var(--bc);
+    object-fit: cover;
+}
+video{
+    z-index: -1;
+    width: 500px;
+}
+main{
+    display: grid;
+    background: var(--bg);
+    border-radius: 14px;
+    text-align: center;
+    height: auto;
+    width: var(--bc);
+    min-width: 300px;
+    max-width: 600px;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin: 23px;
+    z-index: 1;
+}
+.profil img {
+    border: 2.5px solid var(--wh);
+    border-radius: var(--bc);
+    transition-duration: 0.9s;
+    &:hover {
+        box-shadow: 0 0 10px var(--wh),
+                    0 0 20px var(--wh),
+                    0 0 20px var(--wh),
+                    0 0 40px var(--wh);
+    }
+}
+.link-bio  {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    width: var(--bc);
+    height: auto;
+    border-top: 3px solid var(--wh);
+}
+.card-link {
+    margin: 0 20px 10px ;
+}
+.card-link a {
+    display: flex;
+    place-items: center;
+    height: 4rem;
+    margin: 10px 0;
+    color: var(--wh);
+    border: 2.5px solid #ffffffb3;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition-duration: 0.9s;
+
+    &:hover {
+        cursor: pointer;
+        background: transparent;
+        transform: scale(1.2px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 10px var(--wh),
+                    0 0 20px var(--wh);
+    }
+}
+.name-description {
+    flex: 1;
+}
+footer {
+    height: auto ;
+    padding: 10px;
+    background: var(--gd);
+}
+.icon {
+    padding: 8px;
+    cursor: pointer;
+    &i:hover {
+        text-shadow: 0 0 10px var(--wh);
+    }
+}
+
+/* alasan kenapa elemen margin dam padding nilainya = 0 0 0 0  */
+/* agak males nambahin elemen margin padding dengan top right down left >w< */

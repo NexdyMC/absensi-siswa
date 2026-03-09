@@ -1,0 +1,49 @@
+<style>
+@font-face {
+    font-family: 'LilitaOne';
+    src: url(fonts/LilitaOne.ttf);
+}
+#layout   {
+      color: #fff;
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+    /* background: linear-gradient(); */
+    height: 150px;
+    width: 300px;
+    font-family: 'LilitaOne';
+    border-radius: 10px;
+    padding: 20px;  
+}
+</style>
+
+<div id="layout">
+  <img src="" crossorigin="anonymous" width="100">
+  <h2>Kartu Pelajar</h2>
+  <p>Nama: Nexdy</p>
+</div>
+
+<button onclick="download()">Download</button>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+function download() {
+  const img = document.querySelector("#layout img");
+
+  img.onload = () => {
+    html2canvas(document.getElementById("layout"), {
+      useCORS: true,
+      scale: 2,
+      backgroundColor: "#ffffff"
+    }).then(canvas => {
+      const a = document.createElement("a");
+      a.href = canvas.toDataURL("image/png");
+      a.download = "kartu.png";
+      a.click();
+    });
+  };
+
+  // paksa reload image
+  img.src = img.src;
+}
+</script>
+
+

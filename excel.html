@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    <title>excel</title>
+    <style>
+.status.hadir { color: green; font-weight: bold; }
+.status.izin  { color: blue; }
+.status.sakit { color: orange; }
+.status.alpha { color: red; font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+<table>
+    <thead class="data">
+        <tr  class="baris">
+            <th class="colom">No</th>
+            <th class="colom">Nama</th>
+            <th class="colom">Kelas</th>
+            <th class="colom">Alamat</th>
+        </tr>
+    </thead>
+    <tbody class="data">
+        <tr class="baris">
+            <td class="colom">1</td>
+            <td class="colom">Andi</td>
+            <td class="colom">10A</td>
+            <td class="colom status">izin</td>
+        </tr>
+        <tr class="baris">
+            <td class="colom">2</td>
+            <td class="colom">Budi</td>
+            <td class="colom">10B</td>
+            <td class="colom status">hadir</td>
+        </tr>
+        <tr class="baris">
+            <td class="colom">3</td>
+            <td class="colom">Citra</td>
+            <td class="colom">10C</td>
+            <td class="colom status">sakit</td>
+        </tr>
+        <tr class="baris">
+            <td class="colom">3</td>
+            <td class="colom">Citra</td>
+            <td class="colom">10C</td>
+            <td class="colom status">alpha</td>
+        </tr>
+    </tbody>
+</table>
+
+<button onclick="exportExcel()">Export ke Excel</button>
+
+    <script>
+
+function validasiStatus() {
+    const statusList = document.querySelectorAll(".status");
+
+    statusList.forEach(el => {
+        const text = el.textContent.trim().toLowerCase();
+
+        switch (text) {
+            case "hadir":
+                el.style.color = "green";
+                break;
+            case "izin":
+                el.style.color = "blue";
+                break;
+            case "sakit":
+                el.style.color = "orange";
+                break;
+            case "alpha":
+                el.style.color = "red";
+                break;
+            default:
+                el.style.color = "black";
+        }
+    });
+}
+validasiStatus();
+
+function exportExcel() {
+    const barisList = document.querySelectorAll(".data .baris");
+    const tableData = [];
+
+    barisList.forEach(baris => {
+        const kolomList = baris.querySelectorAll(".colom");
+        const row = [];
+
+        kolomList.forEach(kolom => {
+            row.push(kolom.textContent.trim());
+        });
+
+        tableData.push(row);
+    });
+    console.log(tableData);
+
+    const ws = XLSX.utils.aoa_to_sheet(tableData);
+    const range = XLSX.utils.decode_range(ws["!ref"]);
+
+    for (let c = range.s.c; c <= range.e.c; c++) {
+        const cellAddress = XLSX.utils.encode_cell({ r: 0, c });
+        const cell = ws[cellAddress];
+
+        if (cell) {
+            cell.s = {
+                font: { bold: true, color: { rgb: "FFFFFF" } },
+                fill: { fgColor: { rgb: "4F81BD" } },
+                alignment: { horizontal: "center" }
+            };
+        }
+    }
+
+    for (let r = 1; r <= range.e.r; r++) {
+        const cellAddress = XLSX.utils.encode_cell({ r, c: 2 });
+        const cell = ws[cellAddress];
+
+        if (!cell) continue;
+
+        const v = String(cell.v).toLowerCase();
+
+        if (v === "hadir") {
+            cell.s = { font: { color: { rgb: "008000" } } };
+        } else if (v === "izin") {
+            cell.s = { font: { color: { rgb: "0000FF" } } };
+        } else if (v === "sakit") {
+            cell.s = { font: { color: { rgb: "FFA500" } } };
+        } else if (v === "alpha") {
+            cell.s = { font: { color: { rgb: "FF0000" } } };
+        }
+    }
+
+
+    // Buat worksheet & workbook
+    const worksheet = XLSX.utils.aoa_to_sheet(tableData);
+    const workbook = XLSX.utils.book_new();
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Data Siswa");
+
+    // Download file Excel
+    XLSX.writeFile(workbook, "data-siswa.xlsx");
+}
+
+
+
+    </script>
+</body>
+</html>

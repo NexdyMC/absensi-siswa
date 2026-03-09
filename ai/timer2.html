@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jam Digital & Kalender - Tema Biru Orange</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #007bff, #ff8c00); /* Biru ke orange */
+            color: #fff; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            flex-direction: column; 
+        }
+        .container { 
+            background: rgba(255, 255, 255, 0.1); 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            text-align: center; 
+            max-width: 600px; 
+            width: 100%; 
+        }
+        .clock { 
+            font-size: 3em; 
+            font-weight: bold; 
+            color: #ff8c00; /* Orange */
+            margin-bottom: 20px; 
+            text-shadow: 2px 2px #007bff; /* Bayangan biru */
+        }
+        .date { 
+            font-size: 1.5em; 
+            color: #007bff; /* Biru */
+            margin-bottom: 30px; 
+        }
+        .calendar { 
+            display: grid; 
+            grid-template-columns: repeat(7, 1fr); 
+            gap: 10px; 
+            margin-top: 20px; 
+        }
+        .day { 
+            padding: 15px; 
+            background: rgba(255, 255, 255, 0.2); 
+            border-radius: 10px; 
+            color: #fff; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        .day:hover { 
+            background: #ff8c00; /* Orange hover */
+            transform: scale(1.1); 
+        }
+        .day.today { 
+            background: #007bff; /* Biru untuk hari ini */
+            font-weight: bold; 
+        }
+        .header { 
+            grid-column: span 7; 
+            font-size: 1.2em; 
+            color: #ff8c00; 
+            margin-bottom: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock" id="clock">00:00:00</div>
+        <div class="date" id="date">Hari, Tanggal Bulan Tahun</div>
+        
+        <div class="calendar">
+            <div class="header">Kalender - Oktober 2023</div>
+            <div class="day">Min</div>
+            <div class="day">Sen</div>
+            <div class="day">Sel</div>
+            <div class="day">Rab</div>
+            <div class="day">Kam</div>
+            <div class="day">Jum</div>
+            <div class="day">Sab</div>
+            <!-- Contoh hari; ganti dengan data dinamis -->
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+            <div class="day">31</div>
+            <!-- Tambah hari kosong jika perlu -->
+        </div>
+    </div>
+    
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('id-ID', options);
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock(); // Jalankan sekali
+        
+        // Untuk kalender interaktif, tambah event listener di .day
+        document.querySelectorAll('.day').forEach(day => {
+            day.addEventListener('click', () => {
+                alert(`Anda klik hari ${day.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>

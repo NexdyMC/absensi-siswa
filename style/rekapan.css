@@ -1,0 +1,66 @@
+    label {
+        font-family: "LilitaOne";
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    button  {
+        font-size: 16px;
+        font-family: "LilitaOne";
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 4px 0 #ccc;
+        margin: 10px 0;
+        margin: 0 10px 0 0;
+        &:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 0 #aaa;
+
+        }
+    }
+    .btnExcel {
+        background: linear-gradient(45deg, #a0e536, #4bde7e);
+        &:hover {
+            background: linear-gradient( #a0e536, #4bde7e);
+        }   
+    }
+    .btnPNG {
+        background: linear-gradient(45deg, #22d2ee, #2564eb);
+        &:hover{
+            background: linear-gradient( #22d2ee, #2564eb);
+        }
+    }
+    .btnPDF {
+        background: linear-gradient(45deg, #ef4644, #fb903c);
+        &:hover {
+            background: linear-gradient(#ef4644, #fb903c);
+        }
+    }
+    select {
+        margin-top: 10px;
+        padding: 10px ;
+        margin: 0 10px;
+        border: none;
+        border-radius: 5px;
+        font-family: "LilitaOne";
+        font-size: 16px;
+        background: #eee;
+        box-shadow: 0 4px 0 #ccc;
+    }
+    #nama_file {
+        margin-top: 10px;
+        padding: 10px;
+        margin: 0 10px 0 0;
+        border: none;
+        border-radius: 10px;
+        font-family: "LilitaOne";
+        font-size: 16px;
+        background: #eee;
+        box-shadow: 0 4px 0 #ccc;
+    }
+    #nama_file:focus{
+       background: #aaa;
+       box-shadow: 0 4px 0 #ccc;
+    }

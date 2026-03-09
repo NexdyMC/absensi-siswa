@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "LilitaOne";
+  src: url(fonts/LilitaOne.ttf);
+}
+body {
+  font-family: "LilitaOne", Arial, Helvetica, sans-serif;
+  background: #eee;
+  overflow: hidden;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+.dashboard-sidebar {
+  grid-row: span 5 / span 5;
+  padding: 30px 40px;
+  height: 100vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  /* background: #2563fb; */
+  color: #fff;
+  background: linear-gradient(45deg, #153885, #011541);
+
+  .navbar li {
+    list-style: none;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #ddd;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.dashboard-header {
+  display: none;
+  grid-column: span 5 / span 5;
+  grid-column-start: 2;
+  position: sticky;
+  z-index: 999;
+  right: 0;
+  left: 0;
+  top: 0;
+  color: #fff;
+  padding: 30px;
+  background: linear-gradient(-45deg, #153885, #011541);
+}
+.dashboard-content {
+  grid-column: span 5 / span 5;
+  grid-row: span 4 / span 4;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  background: #eee;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  padding: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.content {
+  height: 100%;
+}
+.container {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+.card {
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  transition-duration: 0.5s;
+
+  &:hover {
+    cursor: default;
+    transform: scale(1.04);
+  }
+}
+
+/* Data Absensi specific styles */
+.data-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.data-section h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+tr:hover {
+  background-color: #f9f9f9;
+}
+tbody {
+  color: #444444;
+}
+
+/* icons */
+.icon {
+  display: flex;
+  align-items: center;
+  color: #000;
+  cursor: default;
+  span {
+    box-shadow: 4px 4px 0 #aaa;
+    margin-right: 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 2rem;
+    padding: 10px;
+  }
+}
+
+.account {
+  font-size: 16px;
+  font-family: "LilitaOne";
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration:none;  
+  box-shadow: 0 4px 0 #ccc;
+}
+
+.yellow {
+  color: #fff;
+  background: linear-gradient(90rad, #ff7e29, #f9d423);
+}
+.blue {
+  color: #fff;
+  background: linear-gradient(90deg, #2193b0, #6dd5ed);
+}
+.merah {
+  color: #fff;
+  background: linear-gradient(90deg, #dc2726, #f87117);
+}
+.mageta {
+  color: #fff;
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+}
+.green {
+  color: #fff;
+  background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.create {
+  background: linear-gradient(45deg, #22d2ee, #2564eb);
+  &:hover {
+    background: linear-gradient(#22d2ee, #2564eb);
+  }
+}
+
+.delete {
+  background: linear-gradient(45deg, #f97316, #dc2626);
+  &:hover {
+    background: linear-gradient(#f97316, #dc2626);
+  }
+}
+
+.btnExcel {
+  background: linear-gradient(45deg, #a0e536, #4bde7e);
+  &:hover {
+    background: linear-gradient(#a0e536, #4bde7e);
+  }
+}
+.btnPNG {
+  background: linear-gradient(45deg, #22d2ee, #2564eb);
+  &:hover {
+    background: linear-gradient(#22d2ee, #2564eb);
+  }
+}
+.btnPDF {
+  background: linear-gradient(45deg, #ef4644, #fb903c);
+  &:hover {
+    background: linear-gradient(#ef4644, #fb903c);
+  }
+}

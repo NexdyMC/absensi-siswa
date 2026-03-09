@@ -1,0 +1,19 @@
+{
+    "name": "setting",
+    "bahasa": "id_ID",
+
+    "background": "",
+    "color": "",
+    "jam_alpha": "",
+
+    "navigasi": {
+        "dashbor": "dashboard",
+        "data_absensi": "Data Absensi",
+        "rekapan": "Rekapan",
+        "form_siswa": "Form Siswa",
+        "pengaturan": "pengaturan" 
+    }
+}
+
+
+

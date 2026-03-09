@@ -1,0 +1,120 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* magnet */
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #333;
+}
+
+.item {
+  flex: 0 0 550px;
+  scroll-snap-align: center;   /* nempel di tengah */
+  background-color: #4CAF50;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 150px;
+  position: relative;          /* untuk tombol absolute */
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-btn.left { left: 5px; }
+.scroll-btn.right { right: 5px; }
+
+.scroll-btn:hover { background-color: rgba(0,0,0,0.8); }
+
+
+    </style>
+</head>
+<body>
+    
+        
+<div class="container">
+  <div class="item">
+    1
+    <button class="scroll-btn right" onclick="scrollItem(this)">▶</button>
+  </div>
+
+  <div class="item">
+    2
+    <button class="scroll-btn left" onclick="scrollItem(this)">◀</button>
+    <button class="scroll-btn right" onclick="scrollItem(this)">▶</button>
+  </div>
+
+  <div class="item">
+    3
+    <button class="scroll-btn left" onclick="scrollItem(this)">◀</button>
+    <button class="scroll-btn right" onclick="scrollItem(this)">▶</button>
+  </div>
+
+  <div class="item">
+    4
+    <button class="scroll-btn left" onclick="scrollItem(this)">◀</button>
+    <button class="scroll-btn right" onclick="scrollItem(this)">▶</button>
+  </div>
+
+  <div class="item">
+    5
+    <button class="scroll-btn left" onclick="scrollItem(this)">◀</button>
+  </div>
+</div>
+
+
+</body>
+<script>
+function scrollItem(btn) {
+    const container = document.querySelector('.container');
+    const currentItem = btn.parentElement;
+    const items = container.querySelectorAll('.item');
+    const index = Array.from(items).indexOf(currentItem);
+
+    if (btn.classList.contains('left') && index > 0) {
+        const prev = items[index - 1];
+        scrollToCenter(prev);
+    }
+
+    if (btn.classList.contains('right') && index < items.length - 1) {
+        const next = items[index + 1];
+        scrollToCenter(next);
+    }
+}
+
+function scrollToCenter(item) {
+    const container = document.querySelector('.container');
+    const containerWidth = container.offsetWidth;
+    const scrollLeft = item.offsetLeft - (containerWidth / 2) + (item.offsetWidth / 2);
+
+    container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+}
+
+
+</script>
+</html>

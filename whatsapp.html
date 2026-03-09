@@ -1,0 +1,19 @@
+<button onclick="aktifkanNotif()">Aktifkan Notifikasi</button>
+
+<script>
+function aktifkanNotif(){
+    Notification.requestPermission().then(function(result){
+        if(result === "granted"){
+            alert("Notifikasi aktif");
+        }
+    });
+}
+
+if (Notification.permission === "granted") {
+    new Notification("Notifikasi Sistem", {
+        body: "Anda telah masuk login akun",
+        icon: "icon.png"
+    });
+}
+</script>
+
